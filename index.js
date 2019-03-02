@@ -1,7 +1,13 @@
+import { couponlist, type, list, all_list } from "./list.js";
+
 let Field = new Vue({
   el: "#udon",
   data: {
-    page: 1
+    page: 1,
+    udon: list.udon,
+    tempura: list.tempura,
+    topping: list.topping,
+    other: list.other
   },
   methods: {
     next_page: function() {
