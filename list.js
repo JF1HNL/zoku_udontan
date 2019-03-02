@@ -1,5 +1,3 @@
-export { couponlist, type, all_list, list };
-
 const type = {
   udon: "udon",
   tempura: "tempura",
@@ -490,3 +488,5 @@ const couponlist = [
   { name: "釜揚げの日", price: 0, condition: all_list[5].name },
   { name: "期間限定うどん半額", price: 0, condition: type.udon }
 ];
+
+export { couponlist, type, all_list, list };

@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      .select{background-color:darkgray}
+    </style>
     <title>続・うどんたん</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
@@ -21,7 +24,7 @@
         <h1>まずはうどんを選びましょう！</h1>
         <br />
         <div v-for="udon in udon">
-          {{ udon.name }}
+          <div @click="udon.flag = !udon.flag" :class="{select:udon.flag}">{{ udon.name }}</div><br>
         </div>
         <button @click="next_page();">キミニキメタ！</button>
       </div>
@@ -44,6 +47,6 @@
         <button>最初からうどんを作り直す。</button>
       </div>
     </div>
-    <script type="module" src="index.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
