@@ -23,8 +23,8 @@
       <div v-if="page === 2">
         <h1>まずはうどんを選びましょう！</h1>
         <br />
-        <div v-for="udon in udon">
-          <div @click="udon.flag = !udon.flag" :class="{select:udon.flag}">{{ udon.name }}</div><br>
+        <div v-for="item in list.udon">
+          <div @click="item.flag = !item.flag" :class="{select:item.flag}">{{ item.name }}</div><br>
         </div>
         <button @click="next_page();">キミニキメタ！</button>
       </div>
@@ -32,18 +32,27 @@
         <h1>天ぷらトッピング、サイドメニューを選びましょう！</h1>
         <br />
         <h3>天ぷら</h3>
+        <div v-for="item in list.tempura">
+          <div @click="item.flag = !item.flag" :class="{select:item.flag}">{{ item.name }}</div><br>
+        </div>
         <h3>トッピング</h3>
+        <div v-for="item in list.topping">
+          <div @click="item.flag = !item.flag" :class="{select:item.flag}">{{ item.name }}</div><br>
+        </div>
         <h3>サイドメニュー</h3>
+        <div v-for="item in list.other">
+          <div @click="item.flag = !item.flag" :class="{select:item.flag}">{{ item.name }}</div><br>
+        </div>
         <button @click="next_page();">キミニキメタ！</button>
       </div>
       <div v-if="page === 4">
-        <h1>あなたがうどん</h1>
-        <button>Twitterに共有する</button>
+        <h1>あなたがつくったうどん</h1>
+        <button @click="tweet()">Twitterに共有する</button><br>
         <button @click="next_page();">次へ進む</button>
       </div>
       <div v-if="page === 5">
         <h1>使ってくれてありがとう！</h1>
-        またつかってね
+        またつかってね<br>
         <button>最初からうどんを作り直す。</button>
       </div>
     </div>

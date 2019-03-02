@@ -435,8 +435,7 @@ const list = {
   udon: udonlist,
   tempura: tempuralist,
   topping: toppinglist,
-  other: otherlist,
-  all: all_list
+  other: otherlist
 };
 // const otherlist = [
 //   { name: "天丼用ごはん", price: 130, img: null, allergy: allergy_list.nashi },

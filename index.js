@@ -438,8 +438,7 @@ const list = {
   udon: udonlist,
   tempura: tempuralist,
   topping: toppinglist,
-  other: otherlist,
-  all: all_list
+  other: otherlist
 };
 // const otherlist = [
 //   { name: "天丼用ごはん", price: 130, img: null, allergy: allergy_list.nashi },
@@ -500,12 +499,36 @@ for(let i in list){
 
 let Field = new Vue({
   el: "#udon",
+  computed: {
+    tweet_text_make: function() {
+      let tweet_text = "";
+      for(let i in list){
+        for(let j in list[i]){
+          if(list[i][j].flag){
+            if(tweet_text === ""){
+              tweet_text = list[i][j].name;
+            }else{
+              tweet_text = tweet_text + "と" + list[i][j].name;
+            }
+          }
+        }
+      }
+      const content = {
+        url: window.location.href,
+        text: tweet_text + "を食べました！",
+        tag: "うどんたん"
+      };
+      for (let key in content) {
+        content[key] = encodeURIComponent(content[key]);
+      }
+      return `https://twitter.com/intent/tweet?url=${content.url}&text=${
+        content.text
+      }&hashtags=${content.tag}`;
+    }
+  },
   data: {
     page: 1,
-    udon: list.udon,
-    tempura: list.tempura,
-    topping: list.topping,
-    other: list.other
+    list: list
   },
   methods: {
     next_page: function() {
@@ -523,6 +546,9 @@ let Field = new Vue({
       } else {
         console.error("ページ遷移エラー")
       }
+    },
+    tweet: function(){
+      window.open(this.tweet_text_make);
     }
   }
 })
