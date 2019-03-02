@@ -516,7 +516,7 @@ let Field = new Vue({
       const content = {
         url: window.location.href,
         text: tweet_text + "を食べました！",
-        tag: "うどんたん"
+        tag: "開発途中,テスト"
       };
       for (let key in content) {
         content[key] = encodeURIComponent(content[key]);
