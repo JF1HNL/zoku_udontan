@@ -500,35 +500,30 @@ for(let i in list){
 let Field = new Vue({
   el: "#udon",
   computed: {
-    tweet_text_make: function() {
-      let tweet_text = "";
+    menu_text_make: function() {
+      let text = "";
       for(let i in list){
         for(let j in list[i]){
           if(list[i][j].flag){
-            if(tweet_text === ""){
-              tweet_text = list[i][j].name;
+            if(text === ""){
+              text = list[i][j].name;
             }else{
-              tweet_text = tweet_text + "と" + list[i][j].name;
+              text = text + "と" + list[i][j].name;
             }
           }
         }
       }
-      const content = {
-        url: window.location.href,
-        text: tweet_text + "を食べました！",
-        tag: "開発途中,テスト"
-      };
-      for (let key in content) {
-        content[key] = encodeURIComponent(content[key]);
-      }
-      return `https://twitter.com/intent/tweet?url=${content.url}&text=${
-        content.text
-      }&hashtags=${content.tag}`;
+      return text;
     }
   },
   data: {
     page: 1,
-    list: list
+    list: list,
+    index_data: {
+      tempura: false,
+      topping: false,
+      other: false
+    }
   },
   methods: {
     next_page: function() {
@@ -548,7 +543,18 @@ let Field = new Vue({
       }
     },
     tweet: function(){
-      window.open(this.tweet_text_make);
+      const content = {
+        url: window.location.href,
+        text: this.menu_text_make + "を食べました！",
+        tag: "開発途中,テスト"
+      };
+      for (let key in content) {
+        content[key] = encodeURIComponent(content[key]);
+      }
+      const tweet_text = `https://twitter.com/intent/tweet?url=${content.url}&text=${
+        content.text
+      }&hashtags=${content.tag}`;
+      window.open(tweet_text);
     }
   }
 })

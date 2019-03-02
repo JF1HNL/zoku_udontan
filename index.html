@@ -31,22 +31,23 @@
       <div v-if="page === 3">
         <h1>天ぷらトッピング、サイドメニューを選びましょう！</h1>
         <br />
-        <h3>天ぷら</h3>
-        <div v-for="item in list.tempura">
+        <h3 @click="index_data.tempura = !index_data.tempura">天ぷら{{ index_data.tempura ? "▲" : "▼" }}</h3>
+        <div v-if="index_data.tempura" v-for="item in list.tempura">
           <div @click="item.flag = !item.flag" :class="{select:item.flag}">{{ item.name }}</div><br>
         </div>
-        <h3>トッピング</h3>
-        <div v-for="item in list.topping">
+        <h3 @click="index_data.topping = !index_data.topping">トッピング{{ index_data.topping ? "▲" : "▼" }}</h3>
+        <div v-if="index_data.topping" v-for="item in list.topping">
           <div @click="item.flag = !item.flag" :class="{select:item.flag}">{{ item.name }}</div><br>
         </div>
-        <h3>サイドメニュー</h3>
-        <div v-for="item in list.other">
+        <h3 @click="index_data.other = !index_data.other">サイドメニュー{{ index_data.other ? "▲" : "▼" }}</h3>
+        <div v-if="index_data.other" v-for="item in list.other">
           <div @click="item.flag = !item.flag" :class="{select:item.flag}">{{ item.name }}</div><br>
         </div>
         <button @click="next_page();">キミニキメタ！</button>
       </div>
       <div v-if="page === 4">
         <h1>あなたがつくったうどん</h1>
+        {{ menu_text_make }} <br>
         <button @click="tweet()">Twitterに共有する</button><br>
         <button @click="next_page();">次へ進む</button>
       </div>
