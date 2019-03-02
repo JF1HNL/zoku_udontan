@@ -4,7 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>続・うどんたん</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div id="udon">
+      <div v-if="page > 1">
+        <button @click="back_page();">前の画面に戻る</button><br />
+      </div>
+      <div v-if="page === 1">
+        <h1>さあ、一緒にうどんを作ってみましょう！</h1>
+        <br />
+        <button @click="next_page();">うどんを作る</button>
+      </div>
+      <div v-if="page === 2">
+        <h1>まずはうどんを選びましょう！</h1>
+        <br />
+        <button @click="next_page();">キミニキメタ！</button>
+      </div>
+      <div v-if="page === 3">
+        <h1>天ぷらトッピング、サイドメニューを選びましょう！</h1>
+        <br />
+        <h3>天ぷら</h3>
+        <h3>トッピング</h3>
+        <h3>サイドメニュー</h3>
+        <button @click="next_page();">キミニキメタ！</button>
+      </div>
+      <div v-if="page === 4">
+        <h1>あなたがうどん</h1>
+        <button>Twitterに共有する</button>
+        <button @click="next_page();">次へ進む</button>
+      </div>
+      <div v-if="page === 5">
+        <h1>使ってくれてありがとう！</h1>
+        またつかってね
+        <button>最初からうどんを作り直す。</button>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
 </html>
