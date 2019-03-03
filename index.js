@@ -571,6 +571,9 @@ let Field = new Vue({
           this.list[i][j].flag = false;
         }
       }
+      for(let k in this.index_data){
+        this.index_data[k] = false;
+      }
       this.page = 1;
     }
   }
