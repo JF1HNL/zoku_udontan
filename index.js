@@ -514,6 +514,15 @@ let Field = new Vue({
         }
       }
       return text;
+    },
+    udon_select_judge: function(){
+      let ret = false;
+      for(let i in this.list.udon){
+        if(this.list.udon[i].flag){
+          ret = this.list.udon[i].flag
+        }
+      }
+      return ret;
     }
   },
   data: {
@@ -555,6 +564,14 @@ let Field = new Vue({
         content.text
       }&hashtags=${content.tag}`;
       window.open(tweet_text);
+    },
+    reset: function(){
+      for(let i in this.list){
+        for(let j in this.list[i]){
+          this.list[i][j].flag = false;
+        }
+      }
+      this.page = 1;
     }
   }
 })

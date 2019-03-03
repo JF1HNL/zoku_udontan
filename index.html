@@ -26,7 +26,7 @@
         <div v-for="item in list.udon">
           <div @click="item.flag = !item.flag" :class="{select:item.flag}">{{ item.name }}</div><br>
         </div>
-        <button @click="next_page();">キミニキメタ！</button>
+        <button @click="next_page();" v-if="udon_select_judge">次に進む</button>
       </div>
       <div v-if="page === 3">
         <h1>天ぷらトッピング、サイドメニューを選びましょう！</h1>
@@ -43,7 +43,7 @@
         <div v-if="index_data.other" v-for="item in list.other">
           <div @click="item.flag = !item.flag" :class="{select:item.flag}">{{ item.name }}</div><br>
         </div>
-        <button @click="next_page();">キミニキメタ！</button>
+        <button @click="next_page();">次に進む</button>
       </div>
       <div v-if="page === 4">
         <h1>あなたがつくったうどん</h1>
@@ -54,7 +54,7 @@
       <div v-if="page === 5">
         <h1>使ってくれてありがとう！</h1>
         またつかってね<br>
-        <button>最初からうどんを作り直す。</button>
+        <button @click="reset();">最初からうどんを作り直す。</button>
       </div>
     </div>
     <script src="index.js"></script>
