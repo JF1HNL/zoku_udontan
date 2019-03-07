@@ -25,9 +25,9 @@
         <h1>まずはうどんを選びましょう！</h1>
         <br />
         <div class="kikangentei">期間限定は背景が黄色になります。</div><br>
-        <div v-for="item in list.udon">
-          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.kikangentei}">{{ item.name }}</div><br>
-        </div>
+        <ul v-for="item in list.udon">
+          <li @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.kikangentei}">{{ item.name }}</li><br>
+        </ul>
         <button @click="next_page();" v-if="udon_select_judge">次に進む</button>
       </div>
       <div v-if="page === 3">

@@ -115,19 +115,6 @@ const allergy_list = {
     kani: 1
   }
 };
-// const allergy_list = {
-//   komugi: [1, 0, 0, 0, 0, 0, 0],
-//   komugi_tamago_nyu: [1, 0, 1, 1, 0, 0, 0],
-//   nashi: [0, 0, 0, 0, 0, 0, 0],
-//   komugi_tamago: [1, 0, 1, 0, 0, 0, 0],
-//   komugi_tamago_ebi_kani: [1, 0, 1, 0, 0, 1, 1],
-//   komugi_ebi_kani: [1, 0, 0, 0, 0, 1, 1],
-//   komugi_nyu: [1, 0, 0, 1, 0, 0, 0],
-//   komugi_tamago_nyu_ebi: [1, 0, 1, 1, 0, 1, 0],
-//   komugi_tamago_nyu_ebi_kani: [1, 0, 1, 1, 0, 1, 1],
-//   tamago: [0, 0, 1, 0, 0, 0, 0],
-//   ebi_kani: [0, 0, 0, 0, 0, 1, 1]
-// };
 
 const all_list = [
   //クーポン用
@@ -136,7 +123,6 @@ const all_list = [
     price: 70,
     type: type.topping,
     img: "./topping/topping_oroshi@2x.png",
-    coupon_used: false,
     allergy: allergy_list.nashi
   },
   {
@@ -144,7 +130,6 @@ const all_list = [
     price: 70,
     type: type.topping,
     img: "./topping/topping_ontama@2x.png",
-    coupon_used: false,
     allergy: allergy_list.tamago
   },
   {
@@ -152,7 +137,6 @@ const all_list = [
     price: 130,
     img: "./tempura/kakiage.svg",
     type: type.tempura,
-    coupon_used: false,
     allergy: allergy_list.komugi_tamago_nyu
   },
   {
@@ -160,7 +144,6 @@ const all_list = [
     price: 100,
     img: "./other/inari.svg",
     type: type.other,
-    coupon_used: false,
     allergy: allergy_list.komugi
   },
   {
@@ -168,7 +151,6 @@ const all_list = [
     price: 140,
     img: "./tempura/kashiwa.svg",
     type: type.tempura,
-    coupon_used: false,
     allergy: allergy_list.komugi_tamago_nyu
   },
   {
@@ -176,26 +158,23 @@ const all_list = [
     price: 290,
     img: "./udon/kamaage@2x.png",
     interval: 100,
-    coupon_used: false,
     status: "温",
     type: type.udon,
     allergy: allergy_list.komugi
   },
-  // {
-  //   name: "天丼用ごはん",
-  //   price: 130,
-  //   img: null,
-  //   type: type.other,
-  // coupon_used: false,
-  // allergy: allergy_list.nashi
-  // },
+  {
+    name: "天丼用ごはん",
+    price: 130,
+    img: "",
+    type: type.other,
+  allergy: allergy_list.nashi
+  },
   //うどん
   {
     name: "釜揚げ家族うどん",
     price: 1260,
     img: "./udon/kamaage@2x.png",
     interval: 100,
-    coupon_used: false,
     status: "温",
     type: type.udon,
     interval: 100,
@@ -206,7 +185,6 @@ const all_list = [
     price: 350,
     img: "./udon/kamatama2@2x.png",
     interval: 100,
-    coupon_used: false,
     status: "温",
     type: type.udon,
     interval: 100,
@@ -217,7 +195,6 @@ const all_list = [
     price: 410,
     img: "./udon/mentaikamatama@2x.png",
     interval: 100,
-    coupon_used: false,
     status: "温",
     type: type.udon,
     interval: 100,
@@ -228,7 +205,6 @@ const all_list = [
     price: 350,
     img: "./udon/tororoshoyu@2x.png",
     interval: 100,
-    coupon_used: false,
     status: "両",
     type: type.udon,
     interval: 100,
@@ -239,7 +215,6 @@ const all_list = [
     price: 290,
     img: "./udon/bukkake@2x.png",
     interval: 100,
-    coupon_used: false,
     status: "両",
     type: type.udon,
     interval: 100,
@@ -250,7 +225,6 @@ const all_list = [
     price: 410,
     img: "./udon/torotama2@2x.png",
     interval: 100,
-    coupon_used: false,
     status: "両",
     type: type.udon,
     interval: 100,
@@ -261,7 +235,6 @@ const all_list = [
     price: 350,
     img: "./udon/oroshi@2x.png",
     interval: 100,
-    coupon_used: false,
     status: "両",
     type: type.udon,
     interval: 100,
@@ -272,7 +245,6 @@ const all_list = [
     price: 490,
     img: "./udon/curry@2x.png",
     interval: 100,
-    coupon_used: false,
     status: "温",
     type: type.udon,
     interval: 100,
@@ -283,7 +255,6 @@ const all_list = [
     price: 290,
     img: "./udon/kake@2x.png",
     interval: 100,
-    coupon_used: false,
     status: "温",
     type: type.udon,
     interval: 100,
@@ -294,7 +265,6 @@ const all_list = [
     price: 290,
     img: "./udon/zaru2@2x.png",
     interval: 100,
-    coupon_used: false,
     status: "冷",
     type: type.udon,
     interval: 100,
@@ -306,7 +276,6 @@ const all_list = [
     price: 150,
     img: "./tempura/ebi.svg",
     type: type.tempura,
-    coupon_used: false,
     allergy: allergy_list.komugi_tamago_nyu_ebi
   },
   {
@@ -314,7 +283,6 @@ const all_list = [
     price: 110,
     img: "./tempura/ika.svg",
     type: type.tempura,
-    coupon_used: false,
     allergy: allergy_list.komugi_tamago_nyu
   },
   {
@@ -322,7 +290,6 @@ const all_list = [
     price: 100,
     img: "./tempura/satumaimo.svg",
     type: type.tempura,
-    coupon_used: false,
     allergy: allergy_list.komugi_tamago_nyu
   },
   {
@@ -330,7 +297,6 @@ const all_list = [
     price: 110,
     img: "./tempura/nasu.svg",
     type: type.tempura,
-    coupon_used: false,
     allergy: allergy_list.komugi_tamago_nyu
   },
   {
@@ -338,7 +304,6 @@ const all_list = [
     price: 100,
     img: "./tempura/kabocha.svg",
     type: type.tempura,
-    coupon_used: false,
     allergy: allergy_list.komugi_tamago_nyu
   },
   {
@@ -346,7 +311,6 @@ const all_list = [
     price: 110,
     img: "./tempura/chikuwa.svg",
     type: type.tempura,
-    coupon_used: false,
     allergy: allergy_list.komugi_tamago_nyu_ebi_kani
   },
   {
@@ -354,7 +318,6 @@ const all_list = [
     price: 120,
     img: "./tempura/tamago.svg",
     type: type.tempura,
-    coupon_used: false,
     allergy: allergy_list.komugi_tamago_nyu
   },
   //トッピング
@@ -363,7 +326,6 @@ const all_list = [
     price: 70,
     type: type.topping,
     img: "./topping/topping_mentai@2x.png",
-    coupon_used: false,
     allergy: allergy_list.komugi
   },
   {
@@ -371,7 +333,6 @@ const all_list = [
     price: 130,
     type: type.topping,
     img: "./topping/topping_kitsune@2x.png",
-    coupon_used: false,
     allergy: allergy_list.komugi
   },
   {
@@ -379,7 +340,6 @@ const all_list = [
     price: 70,
     type: type.topping,
     img: "./topping/topping_tororo@2x.png",
-    coupon_used: false,
     allergy: allergy_list.nashi
   },
   {
@@ -387,7 +347,6 @@ const all_list = [
     price: 70,
     type: type.topping,
     img: "./topping/topping_tamago@2x.png",
-    coupon_used: false,
     allergy: allergy_list.tamago
   },
   //other
@@ -396,7 +355,6 @@ const all_list = [
     price: 130,
     img: "./other/sake.svg",
     type: type.other,
-    coupon_used: false,
     allergy: allergy_list.ebi_kani
   },
   {
@@ -404,7 +362,6 @@ const all_list = [
     price: 130,
     img: "./other/ume.svg",
     type: type.other,
-    coupon_used: false,
     allergy: allergy_list.ebi_kani
   },
   {
@@ -412,7 +369,6 @@ const all_list = [
     price: 130,
     img: "./other/mentai.svg",
     type: type.other,
-    coupon_used: false,
     allergy: allergy_list.komugi_ebi_kani
   },
   {
@@ -420,7 +376,6 @@ const all_list = [
     price: 130,
     img: "./other/konbu.svg",
     type: type.other,
-    coupon_used: false,
     allergy: allergy_list.komugi_ebi_kani
   }
 ];
