@@ -1,3 +1,5 @@
+export {list};
+
 const type = {
   udon: "udon",
   tempura: "tempura",
@@ -437,55 +439,3 @@ const list = {
   topping: toppinglist,
   other: otherlist
 };
-// const otherlist = [
-//   { name: "天丼用ごはん", price: 130, img: null, allergy: allergy_list.nashi },
-//   {
-//     name: "いなり",
-//     price: 100,
-//     img: "./other/inari.svg",
-//     allergy: allergy_list.komugi
-//   },
-//   {
-//     name: "鮭（おにぎり）",
-//     price: 130,
-//     img: "./other/sake.svg",
-//     allergy: allergy_list.ebi_kani
-//   },
-//   {
-//     name: "梅（おにぎり）",
-//     price: 130,
-//     img: "./other/ume.svg",
-//     allergy: allergy_list.ebi_kani
-//   },
-//   {
-//     name: "明太子（おにぎり）",
-//     price: 130,
-//     img: "./other/mantai.svg",
-//     allergy: allergy_list.komugi_ebi_kani
-//   },
-//   {
-//     name: "こんぶ（おにぎり）",
-//     price: 130,
-//     img: "./other/konbu.svg",
-//     allergy: allergy_list.komugi_ebi_kani
-//   }
-// ];
-
-const couponlist = [
-  { name: "うどん-¥100", price: 100, condition: type.udon },
-  { name: "うどん-¥50", price: 50, condition: type.udon },
-  { name: "天ぷら-¥30", price: 30, condition: type.tempura },
-  { name: "天ぷら-¥50", price: 50, condition: type.tempura },
-  { name: "天ぷら-¥100", price: 100, condition: type.tempura },
-  { name: "大根おろし無料", price: 70, condition: all_list[0].name },
-  { name: "温玉無料", price: 70, condition: all_list[1].name },
-  { name: "野菜かき揚げ半額", price: 70, condition: all_list[2].name },
-  { name: "いなり半額", price: 50, condition: all_list[3].name },
-  { name: "かしわ天無料", price: 140, condition: all_list[4].name },
-  // { name: "天丼用ごはん半額", price: 70, condition: all_list[6].name },
-  //{ name: "期間限定-¥50", price: 50, condition: "all" },
-  { name: "釜揚げの日", price: 0, condition: all_list[5].name },
-  { name: "期間限定うどん半額", price: 0, condition: type.udon }
-];
-
-export { couponlist, type, all_list, list };
