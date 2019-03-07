@@ -105,6 +105,9 @@ let Field = new Vue({
           this.list[i][j].flag = false;
         }
       }
+      for(let i in this.index_data){
+        this.index_data[i] = false;
+      }
       this.page = 1;
     }
   }

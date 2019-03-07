@@ -51,12 +51,13 @@
       <div v-if="page === 4">
         <h1>あなたがつくったうどん</h1>
         {{ menu_text_make }} <br>
-        <button @click="tweet()">Twitterに共有する</button><br>
-        <button @click="next_page();">次へ進む</button>
+        <button @click="next_page();">コレニスル！</button>
       </div>
       <div v-if="page === 5">
         <h1>使ってくれてありがとう！</h1>
         またつかってね<br>
+        <button @click="tweet()">Twitterに共有する</button><br>
+        <button>クリップボードにコピーする（をここに作りたい）</button>←まだできてないのでできないです。<br>
         <button @click="reset();">最初からうどんを作り直す。</button>
       </div>
     </div>
