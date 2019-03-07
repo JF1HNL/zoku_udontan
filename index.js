@@ -24,6 +24,11 @@ for(let i in kikangentei){
   }
 }
 
+const size = {
+  nami: "並",
+  dai: "大",
+  toku: "得"
+}
 
 for(let i in list){
   for(let j in list[i]){
@@ -31,24 +36,28 @@ for(let i in list){
   }
 }
 
+for(let i in list.udon){
+  list.udon[i].size = size.nami;
+}
+
 let Field = new Vue({
   el: "#udon",
   computed: {
-    menu_text_make: function() {
-      let text = "";
-      for(let i in list){
-        for(let j in list[i]){
-          if(list[i][j].flag){
-            if(text === ""){
-              text = list[i][j].name;
-            }else{
-              text = text + "と" + list[i][j].name;
-            }
-          }
-        }
-      }
-      return text;
-    },
+    // menu_text_make: function() {
+    //   let text = "";
+    //   for(let i in list){
+    //     for(let j in list[i]){
+    //       if(list[i][j].flag){
+    //         if(text === ""){
+    //           text = list[i][j].name;
+    //         }else{
+    //           text = text + "と" + list[i][j].name;
+    //         }
+    //       }
+    //     }
+    //   }
+    //   return text;
+    // },
     udon_select_judge: function(){
       let ret = false;
       for(let i in this.list.udon){
@@ -57,11 +66,27 @@ let Field = new Vue({
         }
       }
       return ret;
+    },
+    page_num: function(){
+      console.log(this.page);
+      return this.page;
+    },
+    select_object: function(){
+      let ret = [];
+      for(let i in list){
+        for(let j in list[i]){
+          if(list[i][j].flag){
+            ret.push(list[i][j]);
+          }
+        }
+      }
+      return ret;
     }
   },
-  data: {
+  data : {
     page: 1,
     list: list,
+    size: size,
     index_data: {
       tempura: false,
       topping: false,
@@ -71,6 +96,7 @@ let Field = new Vue({
   methods: {
     next_page: function() {
       console.log("next_page_function")
+      console.log(this.select_object);
       if (this.page < 100) {
         this.page++
       } else {
@@ -86,9 +112,17 @@ let Field = new Vue({
       }
     },
     tweet: function(){
+      let menu_text = "";
+      for(let i in this.select_object){
+        if(menu_text === ""){
+          menu_text = this.select_object[i].name;
+        }else{
+          menu_text = menu_text + this.select_object[i].name;
+        }
+      }
       const content = {
         url: window.location.href,
-        text: this.menu_text_make + "を食べました！",
+        text: menu_text + "を食べました！",
         tag: "開発途中,テスト,うどんつくるやつ"
       };
       for (let key in content) {

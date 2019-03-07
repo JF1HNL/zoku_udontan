@@ -14,7 +14,6 @@ const kikangentei = [
 		img: "",
 		term_start: "2019-03-12T00:00:00",
 		term_end: "2019-04-20T00:00:00",//4月中旬
-		coupon_used: false,
 		status: "",
 		type: type.udon,
 		interval: 100,
@@ -34,7 +33,6 @@ const kikangentei = [
 		img: "",
 		term_start: "2019-03-12T00:00:00",
 		term_end: "2019-04-20T00:00:00",//4月中旬
-		coupon_used: false,
 		status: "",
 		type: type.udon,
 		interval: 100,
@@ -54,7 +52,6 @@ const kikangentei = [
 		img: "",
 		term_start: "2019-01-29T00:00:00",
 		term_end: "2019-03-11T00:00:00",
-		coupon_used: false,
 		status: "",
 		type: type.udon,
 		interval: 100,
@@ -74,7 +71,6 @@ const kikangentei = [
 		img: "",
 		term_start: "2019-01-29T00:00:00",
 		term_end: "2019-03-11T00:00:00",
-		coupon_used: false,
 		status: "",
 		type: type.udon,
 		interval: 100,
@@ -94,7 +90,6 @@ const kikangentei = [
 		img: "",
 		term_start: "2019-01-29T00:00:00",
 		term_end: "2019-03-11T00:00:00",
-		coupon_used: false,
 		status: "",
 		type: type.udon,
 		interval: 100,
@@ -115,7 +110,6 @@ const kikangentei = [
 		img: "",
 		term_start: "2019-02-25T00:00:00",
 		term_end: "2019-03-25T00:00:00",//終わり次第終了
-		coupon_used: false,
 		allergy: {
 			komugi: 0,
 			soba: 0,
@@ -133,7 +127,6 @@ const kikangentei = [
 		img: "",
 		term_start: "2019-02-25T00:00:00",
 		term_end: "2019-03-25T00:00:00",//終わり次第終了
-		coupon_used: false,
 		allergy: {
 			komugi: 0,
 			soba: 0,
@@ -151,7 +144,6 @@ const kikangentei = [
 		img: "",
 		term_start: "2019-02-25T00:00:00",
 		term_end: "2019-03-25T00:00:00",//終わり次第終了
-		coupon_used: false,
 		allergy: {
 			komugi: 0,
 			soba: 0,
@@ -170,7 +162,6 @@ let udon_object = {
 	img: "",
 	term_start: "2019-01-01T00:00:00",
 	term_end: "2019-01-02T00:00:00",
-	coupon_used: false,
 	status: "",
 	type: type.udon,
 	interval: 100,
@@ -192,7 +183,6 @@ let other_object = {
 	img: "",
 	term_start: "2019-01-01T00:00:00",
 	term_end: "2019-01-02T00:00:00",
-	coupon_used: false,
 	allergy: {
     komugi: 0,
     soba: 0,

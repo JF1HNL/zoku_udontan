@@ -25,9 +25,10 @@
         <h1>まずはうどんを選びましょう！</h1>
         <br />
         <div class="kikangentei">期間限定は背景が黄色になります。</div><br>
-        <ul v-for="item in list.udon">
-          <li @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.kikangentei}">{{ item.name }}</li><br>
-        </ul>
+        <div v-for="item in list.udon">
+          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.kikangentei}">{{ item.name }}</div><br>
+          <div v-if="item.flag" v-for="ty in type" @click="item.size = ty" :class="{select:item.size === ty}">{{ ty }}</div><br>
+        </div>
         <button @click="next_page();" v-if="udon_select_judge">次に進む</button>
       </div>
       <div v-if="page === 3">
@@ -35,22 +36,24 @@
         <br />
         <div class="kikangentei">期間限定は背景が黄色になります。</div><br>
         <h3 @click="index_data.tempura = !index_data.tempura">天ぷら{{ index_data.tempura ? "▲" : "▼" }}</h3>
-        <div v-if="index_data.tempura" v-for="item in list.tempura">
-          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.kikangentei}">{{ item.name }}</div><br>
-        </div>
+        <ul v-if="index_data.tempura" v-for="item in list.tempura">
+          <li @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.kikangentei}">{{ item.name }}</li><br>
+        </ul>
         <h3 @click="index_data.topping = !index_data.topping">トッピング{{ index_data.topping ? "▲" : "▼" }}</h3>
-        <div v-if="index_data.topping" v-for="item in list.topping">
-          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.kikangentei}">{{ item.name }}</div><br>
-        </div>
+        <ul v-if="index_data.topping" v-for="item in list.topping">
+          <li @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.kikangentei}">{{ item.name }}</li><br>
+        </ul>
         <h3 @click="index_data.other = !index_data.other">サイドメニュー{{ index_data.other ? "▲" : "▼" }}</h3>
-        <div v-if="index_data.other" v-for="item in list.other">
-          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.kikangentei}">{{ item.name }}</div><br>
-        </div>
+        <ul v-if="index_data.other" v-for="item in list.other">
+          <li @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.kikangentei}">{{ item.name }}</li><br>
+        </ul>
         <button @click="next_page();">次に進む</button>
       </div>
       <div v-if="page === 4">
         <h1>あなたがつくったうどん</h1>
-        {{ menu_text_make }} <br>
+        <ul v-for="item in select_object">
+          <li>{{ item.name }}</li><br>
+        </ul> <br>
         <button @click="next_page();">コレニスル！</button>
       </div>
       <div v-if="page === 5">
