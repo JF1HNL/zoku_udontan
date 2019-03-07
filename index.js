@@ -1,4 +1,29 @@
 import { list } from "./data.js";
+import { kikangentei } from "./kikangentei.js";
+
+const now_time = new Date();
+
+for(let i in list){
+  for(let j in list[i]){
+    list[i][j].kikangentei = false;
+  }
+}
+
+//対象期間のものを抽出
+for(let i in kikangentei){
+  let term_start = new Date(kikangentei[i].term_start);
+  let term_end = new Date(kikangentei[i].term_end);
+  if(term_start.getTime() < now_time.getTime() && now_time.getTime() < term_end.getTime()){
+    //タイプに合わせて仕分け
+    for(let j in list){
+      if(j === kikangentei[i].type){
+        kikangentei[i].kikangentei = true;
+        list[j].push(kikangentei[i]);
+      }
+    }
+  }
+}
+
 
 for(let i in list){
   for(let j in list[i]){
