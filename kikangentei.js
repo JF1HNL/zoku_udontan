@@ -7,199 +7,141 @@ const type = {
   all: "all"
 };
 
-const kikangentei = [
-	{
-		name: "肉うどん【春のがっつり牛肉祭り】",
-		price: 590,
-		img: "",
-		term_start: "2019-03-12T00:00:00",
-		term_end: "2019-04-20T00:00:00",//4月中旬
-		coupon_used: false,
-		status: "",
-		type: type.udon,
-		interval: 100,
-		allergy: {
-			komugi: 1,
-			soba: 0,
-			tamago: 0,
-			nyu: 1,
-			rakkasei: 0,
-			ebi: 0,
-			kani: 0
-		}
-	},
-	{
-		name: "牛すき釜玉【春のがっつり牛肉祭り】",
-		price: 690,
-		img: "",
-		term_start: "2019-03-12T00:00:00",
-		term_end: "2019-04-20T00:00:00",//4月中旬
-		coupon_used: false,
-		status: "",
-		type: type.udon,
-		interval: 100,
-		allergy: {
-			komugi: 1,
-			soba: 0,
-			tamago: 0,
-			nyu: 1,
-			rakkasei: 0,
-			ebi: 0,
-			kani: 0
-		}
-	},
-	{
-		name: "鴨つけうどん【鴨うどん祭】",
-		price: 640,
-		img: "",
-		term_start: "2019-01-29T00:00:00",
-		term_end: "2019-03-11T00:00:00",
-		coupon_used: false,
-		status: "",
-		type: type.udon,
-		interval: 100,
-		allergy: {
-			komugi: 1,
-			soba: 0,
-			tamago: 0,
-			nyu: 1,
-			rakkasei: 0,
-			ebi: 0,
-			kani: 0
-		}
-	},
-	{
-		name: "鴨ねぎうどん【鴨うどん祭】",
-		price: 650,
-		img: "",
-		term_start: "2019-01-29T00:00:00",
-		term_end: "2019-03-11T00:00:00",
-		coupon_used: false,
-		status: "",
-		type: type.udon,
-		interval: 100,
-		allergy: {
-			komugi: 1,
-			soba: 0,
-			tamago: 0,
-			nyu: 1,
-			rakkasei: 0,
-			ebi: 0,
-			kani: 0
-		}
-	},
-	{
-		name: "鴨すきうどん【鴨うどん祭】",
-		price: 690,
-		img: "",
-		term_start: "2019-01-29T00:00:00",
-		term_end: "2019-03-11T00:00:00",
-		coupon_used: false,
-		status: "",
-		type: type.udon,
-		interval: 100,
-		allergy: {
-			komugi: 1,
-			soba: 0,
-			tamago: 0,
-			nyu: 1,
-			rakkasei: 0,
-			ebi: 0,
-			kani: 0
-		}
-	},
-	{
-		name: "少し辛いラー油【桃屋トッピング】",
-		price: 30,
-		type: type.topping,
-		img: "",
-		term_start: "2019-02-25T00:00:00",
-		term_end: "2019-03-25T00:00:00",//終わり次第終了
-		coupon_used: false,
-		allergy: {
-			komugi: 0,
-			soba: 0,
-			tamago: 0,
-			nyu: 0,
-			rakkasei: 0,
-			ebi: 0,
-			kani: 0
-		}
-	},
-	{
-		name: "梅ごのみ【桃屋トッピング】",
-		price: 30,
-		type: type.topping,
-		img: "",
-		term_start: "2019-02-25T00:00:00",
-		term_end: "2019-03-25T00:00:00",//終わり次第終了
-		coupon_used: false,
-		allergy: {
-			komugi: 0,
-			soba: 0,
-			tamago: 0,
-			nyu: 0,
-			rakkasei: 0,
-			ebi: 0,
-			kani: 0
-		}
-	},
-	{
-		name: "ごはんですよ！【桃屋トッピング】",
-		price: 30,
-		type: type.topping,
-		img: "",
-		term_start: "2019-02-25T00:00:00",
-		term_end: "2019-03-25T00:00:00",//終わり次第終了
-		coupon_used: false,
-		allergy: {
-			komugi: 0,
-			soba: 0,
-			tamago: 0,
-			nyu: 0,
-			rakkasei: 0,
-			ebi: 0,
-			kani: 0
-		}
-	}
-]
+// const data_type = {
+// 	cp_short_name : {
+// 		alldata : [],
+// 		cp_name : ""
+// 	}
+// }
 
-let udon_object = {
-	name: "udonname",
-	price: 0,
-	img: "",
-	term_start: "2019-01-01T00:00:00",
-	term_end: "2019-01-02T00:00:00",
-	coupon_used: false,
-	status: "",
-	type: type.udon,
-	interval: 100,
-	allergy: {
-    komugi: 1,
-    soba: 0,
-    tamago: 0,
-    nyu: 1,
-    rakkasei: 0,
-    ebi: 0,
-    kani: 0
-  }
+const data = {
+	gyuniku201903 : {
+		alldata : [
+			{
+				name: "肉うどん",
+				price: 590,
+				img: "",
+				term_start: "2019-03-12T00:00:00",
+				term_end: "2019-04-20T00:00:00",//4月
+				status: "",
+				type: type.udon
+			},
+			{
+				name: "牛すき釜玉",
+				price: 690,
+				img: "",
+				term_start: "2019-03-12T00:00:00",
+				term_end: "2019-04-20T00:00:00",//4月
+				status: "",
+				type: type.udon
+			},
+		],
+		cp_name : "【春のがっつり牛肉祭り】"
+	},
+	kamoudon201901 : {
+		alldata : [
+			{
+				name: "鴨つけうどん",
+				price: 640,
+				img: "",
+				term_start: "2019-01-29T00:00:00",
+				term_end: "2019-03-11T00:00:00",
+				status: "",
+				type: type.udon
+			},
+			{
+				name: "鴨ねぎうどん",
+				price: 650,
+				img: "",
+				term_start: "2019-01-29T00:00:00",
+				term_end: "2019-03-11T00:00:00",
+				status: "",
+				type: type.udon
+			},
+			{
+				name: "鴨すきうどん",
+				price: 690,
+				img: "",
+				term_start: "2019-01-29T00:00:00",
+				term_end: "2019-03-11T00:00:00",
+				status: "",
+				type: type.udon
+			}
+		],
+		cp_name : "【鴨うどん祭】"
+	},
+	momoya : {
+		alldata : [
+			{
+				name: "少し辛いラー油",
+				price: 30,
+				type: type.topping,
+				img: "",
+				term_start: "2019-02-25T00:00:00",
+				term_end: "2019-03-25T00:00:00",//終わり次第終了
+			},
+			{
+				name: "梅ごのみ",
+				price: 30,
+				type: type.topping,
+				img: "",
+				term_start: "2019-02-25T00:00:00",
+				term_end: "2019-03-25T00:00:00",//終わり次第終了
+			},
+			{
+				name: "ごはんですよ！",
+				price: 30,
+				type: type.topping,
+				img: "",
+				term_start: "2019-02-25T00:00:00",
+				term_end: "2019-03-25T00:00:00",//終わり次第終了
+			}
+		],
+		cp_name : "【桃屋トッピング】"
+	}
 }
 
-let other_object = {
-	name: "other_name",
-	price: 0,
-	type: type.topping,
-	img: "",
-	term_start: "2019-01-01T00:00:00",
-	term_end: "2019-01-02T00:00:00",
-	coupon_used: false,
-	allergy: {
-    komugi: 0,
-    soba: 0,
-    tamago: 0,
-    nyu: 0,
-    rakkasei: 0,
-    ebi: 0,
-    kani: 0
-  }
+let kikangentei = []
+
+const add_data = {
+	udon : {
+		interval : 100,
+		allergy :  {
+			komugi: 1,
+			soba: 0,
+			tamago: 0,
+			nyu: 1,
+			rakkasei: 0,
+			ebi: 0,
+			kani: 0
+		}
+	},
+	other : {
+		allergy : {
+			komugi: 0,
+			soba: 0,
+			tamago: 0,
+			nyu: 0,
+			rakkasei: 0,
+			ebi: 0,
+			kani: 0
+		}
+
+	}
+}
+
+for(let short in data){
+	for(let i in data[short].alldata){
+		if(data[short].alldata[i].type === type.udon){
+			for(let j in add_data.udon){
+				data[short].alldata[i][j] = add_data.udon[j];
+			}
+		}else{
+			for (let j in add_data.other){
+				data[short].alldata[i][j] = add_data.udon[j];
+			}
+		}
+		data[short].alldata[i].cp_name = data[short].cp_name;
+		kikangentei.push(data[short].alldata[i]);
+	}
 }

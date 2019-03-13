@@ -26,7 +26,7 @@
         <br />
         <div class="kikangentei">期間限定は背景が黄色になります。</div><br>
         <div v-for="item in list.udon">
-          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.kikangentei}">{{ item.name }}</div><br>
+          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.cp_name}">{{ item.name }}</div><br>
         </div>
         <button @click="next_page();" v-if="udon_select_judge">次に進む</button>
       </div>
@@ -36,15 +36,15 @@
         <div class="kikangentei">期間限定は背景が黄色になります。</div><br>
         <h3 @click="index_data.tempura = !index_data.tempura">天ぷら{{ index_data.tempura ? "▲" : "▼" }}</h3>
         <div v-if="index_data.tempura" v-for="item in list.tempura">
-          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.kikangentei}">{{ item.name }}</div><br>
+          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.cp_name}">{{ item.name }}</div><br>
         </div>
         <h3 @click="index_data.topping = !index_data.topping">トッピング{{ index_data.topping ? "▲" : "▼" }}</h3>
         <div v-if="index_data.topping" v-for="item in list.topping">
-          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.kikangentei}">{{ item.name }}</div><br>
+          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.cp_name}">{{ item.name }}</div><br>
         </div>
         <h3 @click="index_data.other = !index_data.other">サイドメニュー{{ index_data.other ? "▲" : "▼" }}</h3>
         <div v-if="index_data.other" v-for="item in list.other">
-          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.kikangentei}">{{ item.name }}</div><br>
+          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.cp_name}">{{ item.name }}</div><br>
         </div>
         <button @click="next_page();">次に進む</button>
       </div>

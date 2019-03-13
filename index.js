@@ -5,7 +5,7 @@ const now_time = new Date();
 
 for(let i in list){
   for(let j in list[i]){
-    list[i][j].kikangentei = false;
+    list[i][j].cp_name = "";
   }
 }
 
