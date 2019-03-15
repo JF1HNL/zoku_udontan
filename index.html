@@ -7,8 +7,9 @@
     <style>
       .select{background-color:darkgray}
       .kikangentei{background-color:rgba(255, 255, 0, 0.932)}
+      .item_box{border: solid 3px black;}
     </style>
-    <title>続・うどんたん</title>
+    <title>うどんクック</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
@@ -17,7 +18,7 @@
         <button @click="back_page();">前の画面に戻る</button><br />
       </div>
       <div v-if="page === 1">
-        <h1>さあ、一緒にうどんを作ってみましょう！</h1>
+        <h1>うどんクック</h1>
         <br />
         <button @click="next_page();">うどんを作る</button>
       </div>
@@ -25,8 +26,11 @@
         <h1>まずはうどんを選びましょう！</h1>
         <br />
         <div class="kikangentei">期間限定は背景が黄色になります。</div><br>
-        <div v-for="item in list.udon">
-          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.cp_name}">{{ item.name }}</div><br>
+        <div class="item_box" v-for="item in list.udon">
+          <div :class="{select:item.flag}">
+            <div @click="item.flag = !item.flag">{{ item.cp_name ? "期間限定！：" : "" }}{{ item.name }}</div>
+            <div v-if="item.cp_name">{{ item.cp_name }}</div>
+          </div>
         </div>
         <button @click="next_page();" v-if="udon_select_judge">次に進む</button>
       </div>
@@ -35,16 +39,25 @@
         <br />
         <div class="kikangentei">期間限定は背景が黄色になります。</div><br>
         <h3 @click="index_data.tempura = !index_data.tempura">天ぷら{{ index_data.tempura ? "▲" : "▼" }}</h3>
-        <div v-if="index_data.tempura" v-for="item in list.tempura">
-          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.cp_name}">{{ item.name }}</div><br>
+        <div v-if="index_data.tempura" class="item_box" v-for="item in list.tempura">
+          <div :class="{select:item.flag}">
+            <div @click="item.flag = !item.flag">{{ item.cp_name ? "期間限定！：" : "" }}{{ item.name }}</div>
+            <div v-if="item.cp_name">{{ item.cp_name }}</div>
+          </div>
         </div>
         <h3 @click="index_data.topping = !index_data.topping">トッピング{{ index_data.topping ? "▲" : "▼" }}</h3>
-        <div v-if="index_data.topping" v-for="item in list.topping">
-          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.cp_name}">{{ item.name }}</div><br>
+        <div v-if="index_data.topping" class="item_box" v-for="item in list.topping">
+          <div :class="{select:item.flag}">
+            <div @click="item.flag = !item.flag">{{ item.cp_name ? "期間限定！：" : "" }}{{ item.name }}</div>
+            <div v-if="item.cp_name">{{ item.cp_name }}</div>
+          </div>
         </div>
         <h3 @click="index_data.other = !index_data.other">サイドメニュー{{ index_data.other ? "▲" : "▼" }}</h3>
-        <div v-if="index_data.other" v-for="item in list.other">
-          <div @click="item.flag = !item.flag" :class="{select:item.flag, 'kikangentei':!item.flag && item.cp_name}">{{ item.name }}</div><br>
+        <div v-if="index_data.other" class="item_box" v-for="item in list.other">
+          <div :class="{select:item.flag}">
+            <div @click="item.flag = !item.flag">{{ item.cp_name ? "期間限定！：" : "" }}{{ item.name }}</div>
+            <div v-if="item.cp_name">{{ item.cp_name }}</div>
+          </div>
         </div>
         <button @click="next_page();">次に進む</button>
       </div>
@@ -57,7 +70,7 @@
         <h1>使ってくれてありがとう！</h1>
         またつかってね<br>
         <button @click="tweet()">Twitterに共有する</button><br>
-        <button>クリップボードにコピーする（をここに作りたい）</button>←まだできてないのでできないです。<br>
+        <button @click="copy('url')">クリップボードにコピーする</button><br>
         <button @click="reset();">最初からうどんを作り直す。</button>
       </div>
     </div>

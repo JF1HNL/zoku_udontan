@@ -66,7 +66,8 @@ let Field = new Vue({
       tempura: false,
       topping: false,
       other: false
-    }
+    },
+    twitter_tag: ["うどんクック","うどんつくるやつ"]
   },
   methods: {
     next_page: function() {
@@ -89,7 +90,7 @@ let Field = new Vue({
       const content = {
         url: window.location.href,
         text: this.menu_text_make + "を食べました！",
-        tag: "開発途中,テスト,うどんつくるやつ"
+        tag: this.separete(",")
       };
       for (let key in content) {
         content[key] = encodeURIComponent(content[key]);
@@ -98,6 +99,61 @@ let Field = new Vue({
         content.text
       }&hashtags=${content.tag}`;
       window.open(tweet_text);
+    },
+    copy: function(type){
+      const content = {
+        url: window.location.href,
+        text: this.menu_text_make + "を食べました！",
+        tag: "#" + this.separete(" #")
+      };
+      let copy_text = content.text;
+      if(type === "url"){
+        copy_text = copy_text + " " + content.url + " " + content.tag;
+      }
+      this.execCopy(copy_text);
+      alert("クリップボードにコピーしました。");
+    },
+    // コピペしてしまった
+    execCopy: function(string){
+
+      // 空div 生成
+      var tmp = document.createElement("div");
+      // 選択用のタグ生成
+      var pre = document.createElement('pre');
+    
+      // 親要素のCSSで user-select: none だとコピーできないので書き換える
+      pre.style.webkitUserSelect = 'auto';
+      pre.style.userSelect = 'auto';
+    
+      tmp.appendChild(pre).textContent = string;
+    
+      // 要素を画面外へ
+      var s = tmp.style;
+      s.position = 'fixed';
+      s.right = '200%';
+    
+      // body に追加
+      document.body.appendChild(tmp);
+      // 要素を選択
+      document.getSelection().selectAllChildren(tmp);
+    
+      // クリップボードにコピー
+      var result = document.execCommand("copy");
+    
+      // 要素削除
+      document.body.removeChild(tmp);
+    
+      return result;
+    },
+    separete: function(char){
+      let ret = "";
+      for(let i in this.twitter_tag){
+        if(ret !== ""){
+          ret = ret + char;
+        }
+        ret = ret + this.twitter_tag[i];
+      }
+      return ret;
     },
     reset: function(){
       for(let i in this.list){
