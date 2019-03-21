@@ -1,20 +1,9 @@
 {
-	name: "udonname",
+	name: "",
 	price: 0,
 	img: "",
-	term_start: "2019-01-01T00:00:00",
-	term_end: "2019-01-02T00:00:00",
-	coupon_used: false,
+	term_start: "2019-03-12T00:00:00",
+	term_end: "2019-04-23T00:00:00",//4月
 	status: "",
-	type: type.udon,
-	interval: 100,
-	allergy: {
-    komugi: 1,
-    soba: 0,
-    tamago: 0,
-    nyu: 1,
-    rakkasei: 0,
-    ebi: 0,
-    kani: 0
-  }
+	type: type.udon
 }

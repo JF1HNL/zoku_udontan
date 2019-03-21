@@ -15,6 +15,88 @@ const type = {
 // }
 
 const data = {
+	shugawari201902 : {
+		alldata : [
+			{
+				name: "明太玉子あんかけ",
+				price: 420,
+				img: "",
+				term_start: "2019-02-12T00:00:00",
+				term_end: "2019-02-19T00:00:00",
+				status: "",
+				type: type.udon
+			},
+			{
+				name: "あおさ玉子あんかけ",
+				price: 420,
+				img: "",
+				term_start: "2019-02-19T00:00:00",
+				term_end: "2019-02-26T00:00:00",
+				status: "",
+				type: type.udon
+			},
+			{
+				name: "月見わかめかけ",
+				price: 410,
+				img: "",
+				term_start: "2019-02-26T00:00:00",
+				term_end: "2019-03-05T00:00:00",
+				status: "",
+				type: type.udon
+			},
+			{
+				name: "月見昆布かけ",
+				price: 410,
+				img: "",
+				term_start: "2019-03-05T00:00:00",
+				term_end: "2019-03-12T00:00:00",
+				status: "",
+				type: type.udon
+			},
+			{
+				name: "月見刻みきつねかけ",
+				price: 410,
+				img: "",
+				term_start: "2019-03-12T00:00:00",
+				term_end: "2019-03-19T00:00:00",//4月
+				status: "",
+				type: type.udon
+			},
+			{
+				name: "刻みきつねかけ",
+				price: 420,
+				img: "",
+				term_start: "2019-03-19T00:00:00",
+				term_end: "2019-03-26T00:00:00",//4月
+				status: "",
+				type: type.udon
+			},
+			{
+				name: "ごぼう天うどん",
+				price: 430,
+				img: "",
+				term_start: "2019-03-26T00:00:00",
+				term_end: "2019-04-02T00:00:00",//4月
+				status: "",
+				type: type.udon
+			}
+		],
+		cp_name : "【週替わりうどん】"
+	},
+	asari201903 : {
+		alldata : [
+			{
+				name: "あさりうどん",
+				price: 590,
+				img: "",
+				term_start: "2019-03-12T00:00:00",
+				term_end: "2019-04-23T00:00:00",
+				status: "",
+				type: type.udon
+			}
+		],
+		cp_name : "【あさりうどん】"
+	},
 	gyuniku201903 : {
 		alldata : [
 			{
@@ -22,7 +104,7 @@ const data = {
 				price: 590,
 				img: "",
 				term_start: "2019-03-12T00:00:00",
-				term_end: "2019-04-20T00:00:00",//4月
+				term_end: "2019-04-23T00:00:00",//4月
 				status: "",
 				type: type.udon
 			},
@@ -31,7 +113,7 @@ const data = {
 				price: 690,
 				img: "",
 				term_start: "2019-03-12T00:00:00",
-				term_end: "2019-04-20T00:00:00",//4月
+				term_end: "2019-04-23T00:00:00",//4月
 				status: "",
 				type: type.udon
 			},
